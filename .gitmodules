@@ -1,11 +1,11 @@
 [submodule "FV3"]
   path = FV3
   url = https://github.com/hafs-community/fv3atm
-  branch = feature/hafs.v2.0.1
+  branch = support/HAFS
 [submodule "WW3"]
   path = WW3
   url = https://github.com/hafs-community/WW3
-  branch = feature/hafs.v2.0.1
+  branch = support/HAFS
 [submodule "stochastic_physics"]
   path = stochastic_physics
   url = https://github.com/NOAA-PSL/stochastic_physics
