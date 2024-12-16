@@ -1,1 +1,3 @@
-control_c48_lnd_iau intel
+cpld_control_p8 intel
+cpld_restart_p8 intel
+cpld_control_p8 intelllvm
