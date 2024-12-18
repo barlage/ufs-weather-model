@@ -70,7 +70,7 @@ elif [[ ${MACHINE_ID} = gaea ]] ; then
     fi
     module reset
 
-elif [[ $MACHINE_ID = gaeaC6 ]] ; then
+elif [[ $MACHINE_ID = gaeac6 ]] ; then
     source /opt/cray/pe/lmod/8.7.31/init/bash
 
 elif [[ ${MACHINE_ID} = expanse ]]; then
