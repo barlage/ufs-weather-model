@@ -109,6 +109,8 @@ export NSPINUP=1
 export ISEED_CA=12345
 
 export IMP_PHYSICS=88
+export LTAEROSOL=.false.
+export LTHAILAWARE=.false.
 export LGFDLMPRAD=.false.
 export DO_SAT_ADJ=.false.
 export DNATS=0

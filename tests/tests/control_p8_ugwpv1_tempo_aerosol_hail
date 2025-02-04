@@ -111,6 +111,7 @@ export ISEED_CA=12345
 export IMP_PHYSICS=88
 export LTAEROSOL=.true.
 export LTHAILAWARE=.true.
+export INPES=6
 export SEDI_SEMI=.false.
 export LGFDLMPRAD=.false.
 export DO_SAT_ADJ=.false.
