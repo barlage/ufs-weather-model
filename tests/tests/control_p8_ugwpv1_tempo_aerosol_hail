@@ -111,7 +111,7 @@ export ISEED_CA=12345
 export IMP_PHYSICS=88
 export LTAEROSOL=.true.
 export LTHAILAWARE=.true.
-exprot SEDI_SEMI=.false.
+export SEDI_SEMI=.false.
 export LGFDLMPRAD=.false.
 export DO_SAT_ADJ=.false.
 export DNATS=0
@@ -130,8 +130,8 @@ export WRITE_NSFLIP=.true.
 
 export FV3_RUN=control_run.IN
 export CCPP_SUITE=FV3_GFS_v17_p8_ugwpv1_tempo
-export FIELD_TABLE=field_table_thompson_aero_tke
-export DIAG_TABLE=diag_table_cpld_aerosol.IN
+export FIELD_TABLE=field_table_thompson_aero_hail_tke
+export DIAG_TABLE=diag_table_cpld_aerosol_hail.IN
 export INPUT_NML=global_control.nml.IN
 
 # RRTMGP
