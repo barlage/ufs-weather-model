@@ -1,5 +1,3 @@
 cpld_control_gefs intel
 cpld_restart_gefs intel
 cpld_dcp_gefs intel
-control_iovr4_gfdlmpv3 intel
-hafs_regional_atm_gfdlmpv3 intel
