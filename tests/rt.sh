@@ -786,7 +786,7 @@ case ${MACHINE_ID} in
     COMPILE_QUEUE="batch"
 
     PARTITION=
-    dprefix="/scratch1/NCEPDEV"
+    dprefix=${dprefix:-"/scratch1/NCEPDEV"}
     #DISKNM="/scratch2/NAGAPE/epic/UFS-WM_RT"
     DISKNM="/scratch1/NCEPDEV/hwrf/save/Bin.Li/UFS-WM_RT"
     STMP="${dprefix}/stmp4"
@@ -813,7 +813,7 @@ case ${MACHINE_ID} in
     QUEUE="batch"
     COMPILE_QUEUE="batch"
     PARTITION="orion"
-    dprefix="/work/noaa/stmp/${USER}"
+    dprefix=${dprefix:-"/work/noaa/stmp/${USER}"}
     DISKNM="/work/noaa/epic/UFS-WM_RT"
     STMP="${dprefix}/stmp"
     PTMP="${dprefix}/stmp"
@@ -841,7 +841,7 @@ case ${MACHINE_ID} in
     QUEUE="batch"
     COMPILE_QUEUE="batch"
     PARTITION="hercules"
-    dprefix="/work2/noaa/stmp/${USER}"
+    dprefix=${dprefix:-"/work2/noaa/stmp/${USER}"}
     DISKNM="/work/noaa/epic/hercules/UFS-WM_RT"
     STMP="${dprefix}/stmp"
     PTMP="${dprefix}/stmp"
@@ -904,7 +904,7 @@ case ${MACHINE_ID} in
     COMPILE_QUEUE="s4"
 
     PARTITION="s4"
-    dprefix="/data/prod"
+    dprefix=${dprefix:-"/data/prod"}
     DISKNM="${dprefix}/emc.nemspara/RT"
     STMP="/scratch/short/users"
     PTMP="/scratch/users"
@@ -935,7 +935,7 @@ case ${MACHINE_ID} in
     QUEUE="main"
     COMPILE_QUEUE="main"
     PARTITION=
-    dprefix="/glade/derecho/scratch"
+    dprefix=${dprefix:-"/glade/derecho/scratch"}
     DISKNM="/glade/derecho/scratch/epicufsrt/ufs-weather-model/RT/"
     STMP="${dprefix}"
     PTMP="${dprefix}"
@@ -961,7 +961,7 @@ case ${MACHINE_ID} in
     QUEUE="batch"
     COMPILE_QUEUE="batch"
     PARTITION=
-    dprefix="/lustre/"
+    dprefix=${dprefix:-"/lustre/"}
     DISKNM="/contrib/ufs-weather-model/RT"
     STMP="${dprefix}/stmp4"
     PTMP="${dprefix}/stmp2"
