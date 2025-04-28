@@ -1,9 +1,9 @@
-Mon Apr 28 02:32:48 UTC 2025
+Mon Apr 28 07:50:25 UTC 2025
 Start Operation Requirement Test
 
 
 baseline dir = /scratch1/NCEPDEV/stmp4/role.epic/FV3_OPNREQ_TEST/OPNREQ_TEST/cpld_control_c96_noaero_p8_dbg_base_gnu
-working dir  = /scratch1/NCEPDEV/stmp2/role.epic/FV3_OPNREQ_TEST/opnReqTest_56013/dbg_base_dbg_base
+working dir  = /scratch1/NCEPDEV/stmp2/role.epic/FV3_OPNREQ_TEST/opnReqTest_1999027/dbg_base_dbg_base
 Checking test dbg_base results ....
 Moving baseline dbg_base files ....
  Moving sfcf021.tile1.nc .........OK
@@ -66,14 +66,14 @@ Moving baseline dbg_base files ....
  Moving RESTART/iced.2021-03-23-21600.nc .........OK
  Moving RESTART/ufs.cpld.cpl.r.2021-03-23-21600.nc .........OK
 
-  0: The total amount of wall time                        = 2369.113623
-  0: The maximum resident set size (KB)                   = 1494696
+  0: The total amount of wall time                        = 2392.117214
+  0: The maximum resident set size (KB)                   = 1494976
 
 Test dbg_base PASS
 
 
 baseline dir = /scratch1/NCEPDEV/stmp4/role.epic/FV3_OPNREQ_TEST/OPNREQ_TEST/cpld_control_c96_noaero_p8_std_base_gnu
-working dir  = /scratch1/NCEPDEV/stmp2/role.epic/FV3_OPNREQ_TEST/opnReqTest_56013/rst_rst
+working dir  = /scratch1/NCEPDEV/stmp2/role.epic/FV3_OPNREQ_TEST/opnReqTest_1999027/rst_rst
 Checking test rst results ....
  Comparing sfcf021.tile1.nc .....USING NCCMP......OK
  Comparing sfcf021.tile2.nc .....USING NCCMP......OK
@@ -135,14 +135,14 @@ Checking test rst results ....
  Comparing RESTART/iced.2021-03-23-21600.nc .....USING NCCMP......OK
  Comparing RESTART/ufs.cpld.cpl.r.2021-03-23-21600.nc .....USING NCCMP......OK
 
-  0: The total amount of wall time                        = 674.896127
-  0: The maximum resident set size (KB)                   = 1509984
+  0: The total amount of wall time                        = 675.249371
+  0: The maximum resident set size (KB)                   = 1497780
 
 Test rst PASS
 
 
 baseline dir = /scratch1/NCEPDEV/stmp4/role.epic/FV3_OPNREQ_TEST/OPNREQ_TEST/cpld_control_c96_noaero_p8_std_base_gnu
-working dir  = /scratch1/NCEPDEV/stmp2/role.epic/FV3_OPNREQ_TEST/opnReqTest_56013/std_base_std_base
+working dir  = /scratch1/NCEPDEV/stmp2/role.epic/FV3_OPNREQ_TEST/opnReqTest_1999027/std_base_std_base
 Checking test std_base results ....
 Moving baseline std_base files ....
  Moving sfcf021.tile1.nc .........OK
@@ -205,11 +205,11 @@ Moving baseline std_base files ....
  Moving RESTART/iced.2021-03-23-21600.nc .........OK
  Moving RESTART/ufs.cpld.cpl.r.2021-03-23-21600.nc .........OK
 
-  0: The total amount of wall time                        = 679.670015
-  0: The maximum resident set size (KB)                   = 1510864
+  0: The total amount of wall time                        = 675.094566
+  0: The maximum resident set size (KB)                   = 1510264
 
 Test std_base PASS
 
 OPERATION REQUIREMENT TEST WAS SUCCESSFUL
-Mon Apr 28 04:03:38 UTC 2025
-Elapsed time: 01h:30m:51s. Have a nice day!
+Mon Apr 28 09:23:55 UTC 2025
+Elapsed time: 01h:33m:30s. Have a nice day!
