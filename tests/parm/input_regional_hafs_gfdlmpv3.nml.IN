@@ -170,7 +170,7 @@
        fhlwr          = @[FHLWR]
        ialb           = 1
        iems           = 1
-       iaer           = 111
+       iaer           = @[IAER]
        ico2           = 2
        isubc_sw       = 2
        isubc_lw       = 2
