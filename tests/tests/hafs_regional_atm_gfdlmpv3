@@ -96,6 +96,3 @@ export INPUT_NML=input_regional_hafs_gfdlmpv3.nml.IN
 export MODEL_CONFIGURE=model_configure_hafs.IN
 export UFS_CONFIGURE=ufs.configure.hafs_atm.IN
 export FV3_RUN=hafs_fv3_run.IN
-
-# GFDLMP V3
-export GFDLMP_V3=.true.
