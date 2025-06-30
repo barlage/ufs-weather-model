@@ -2,3 +2,8 @@ control_iovr4 intel
 control_iovr4_gfdlmpv3 intel
 hafs_regional_atm_gfdlmpv3 intel
 hafs_regional_atm intel
+hafs_regional_atm_wav intel
+hafs_regional_atm_ocn_wav intel
+hafs_regional_storm_following_1nest_atm_ocn_wav intel
+hafs_regional_storm_following_1nest_atm_ocn_wav_inline intel
+hafs_regional_storm_following_1nest_atm_ocn_wav_mom6 intel

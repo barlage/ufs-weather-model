@@ -1833,6 +1833,7 @@ export LTAEROSOL=.false.
 export CDMBWD=1.0,1.0,1.0,1.0
 export LHEATSTRG=.false.
 export LRADAR=.true.
+export ICPLOCN2ATM=0
 
 export FV_CORE_TAU=5.
 export RF_CUTOFF=30.e2
