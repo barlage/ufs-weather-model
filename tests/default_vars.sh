@@ -681,6 +681,7 @@ export EFFR_IN=.false.
 # Thompson MP
 export LRADAR=.false.
 export LTAEROSOL=.false.
+export LTHAILAWARE=.false.
 export EXT_DIAG_THOMPSON=.false.
 export SEDI_SEMI=.true.
 export DECFL=10
@@ -1833,6 +1834,7 @@ export LTAEROSOL=.false.
 export CDMBWD=1.0,1.0,1.0,1.0
 export LHEATSTRG=.false.
 export LRADAR=.true.
+export ICPLOCN2ATM=0
 
 export FV_CORE_TAU=5.
 export RF_CUTOFF=30.e2

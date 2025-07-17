@@ -17,7 +17,7 @@
 /
 
  &fv_grid_nml
-       !grid_file = 'INPUT/grid_spec.nc'
+       grid_file = 'INPUT/grid_spec.nc'
 /
 
 &fms2_io_nml
@@ -25,10 +25,10 @@
 /
 
  &fv_core_nml
-       layout = @[INPES_NEST],@[JNPES_NEST]
+       layout = @[INPES],@[JNPES]
        io_layout = 1,1
-       npx = @[NPX_NEST]
-       npy = @[NPY_NEST]
+       npx = @[NPX]
+       npy = @[NPY]
        ntiles   = 1
        npz    = @[NPZ]
        !grid_type = -1
@@ -39,9 +39,8 @@
        n_sponge = 24
        nudge_qv = .false.
        nudge_dz = .false.
-       tau = @[FV_CORE_TAU]
-       rf_cutoff = @[RF_CUTOFF_NEST]
-       fast_tau_w_sec = @[FAST_TAU_W_SEC]
+       tau = 5.
+       rf_cutoff = 50.e2
        d2_bg_k1 = 0.20
        d2_bg_k2 = 0.15
        kord_tm = -11
@@ -54,8 +53,8 @@
        beta = 0.
        a_imp = 1.
        p_fac = 0.1
-       k_split = @[K_SPLIT_NEST]
-       n_split = @[N_SPLIT_NEST]
+       k_split = @[K_SPLIT]
+       n_split = @[N_SPLIT]
        nwat = @[NWAT]
        na_init = @[NA_INIT]
        d_ext = 0.0
@@ -97,13 +96,37 @@
        increment_file_on_native_grid = @[INCREMENT_FILE_ON_NATIVE_GRID]
        write_3d_diags = .true.
 
-       nested = .true.
-       twowaynest = .true.
-       nestupdate = 7
+       do_schmidt = .true.
+       target_lat = @[TARGET_LAT]
+       target_lon = @[TARGET_LON]
+       stretch_fac = @[STRETCH_FAC]
+
+       regional = @[REGIONAL]
+       bc_update_interval = @[BC_UPDATE_INTERVAL]
+       nrows_blend = @[NROWS_BLEND]
 
        full_zs_filter = @[FULL_ZS_FILTER]
        n_zs_filter = @[N_ZS_FILTER]
        nord_zs_filter = 4
+/
+
+ &fv_nest_nml
+       grid_pes = @[GRID_PES]
+       tile_coarse = @[TILE_COARSE]
+       num_tile_top = @[NUM_TILE_TOP]
+       p_split = 1
+       nest_refine = @[NEST_REFINE]
+       nest_ioffsets= @[NEST_IOFFSETS]
+       nest_joffsets= @[NEST_JOFFSETS]
+/
+
+ &fv_moving_nest_nml
+       surface_dir = "INPUT/moving_nest"
+       is_moving_nest = @[IS_MOVING_NEST]
+       vortex_tracker = @[VORTEX_TRACKER]
+       ntrack = @[NTRACK]
+       move_cd_x = @[MOVE_CD_X]
+       move_cd_y = @[MOVE_CD_Y]
 /
 
  &surf_map_nml
@@ -128,27 +151,23 @@
  &gfs_physics_nml
        fhzero         = 3.
        ldiag3d        = .false.
+       lradar         = .true.
        avg_max_length = 3600.
        h2o_phys       = .true.
        fhcyc          = @[FHCYC]
        use_ufo        = .true.
        pre_rad        = .false.
        imp_physics    = @[IMP_PHYSICS]
-       iovr           = @[IOVR]
-       ltaerosol      = @[LTAEROSOL]
-       lradar         = @[LRADAR]
-       ttendlim       = -999
-       dt_inner       = @[DT_INNER]
-       sedi_semi      = @[SEDI_SEMI]
-       decfl          = @[DECFL]
+       ltaerosol    = .false.
+       lradar       = .true.
+       ttendlim     = -999
+       dt_inner     = @[DT_INNER]
+       sedi_semi    = @[SEDI_SEMI]
+       decfl        = @[DECFL]
        ext_diag_thompson = .false.
        pdfcld         = .false.
        fhswr          = @[FHSWR]
        fhlwr          = @[FHLWR]
-       progsigma      = @[PROGSIGMA]
-       betascu        = @[BETASCU]
-       betamcu        = @[BETAMCU]
-       betadcu        = @[BETADCU]
        ialb           = 1
        iems           = 1
        iaer           = @[IAER]
@@ -158,42 +177,42 @@
        isol           = 2
        lwhtr          = .true.
        swhtr          = .true.
-       cnvgwd         = @[CNVGWD]
+       cnvgwd         = .false.
        shal_cnv       = .true. !Shallow convection
        cal_pre        = .false.
        redrag         = .true.
        dspheat        = .true.
-       hybedmf        = @[HYBEDMF]
-       hurr_pbl       = @[HURR_PBL]     ! HWRF moninedmf
-       moninq_fac     = @[MONINQ_FAC]       ! HWRF_moninedmf
-       satmedmf       = @[SATMEDMF]
-       isatmedmf      = @[ISATMEDMF]
+       hybedmf        = .false.
+       hurr_pbl       = .true.     ! HWRF moninedmf
+       moninq_fac     = -1.0       ! HWRF_moninedmf
+       satmedmf       = .true.
+       isatmedmf      = 1
        rlmx           = 300.
        elmx           = 300.
        sfc_rlm        = 1
        random_clds    = .false.
        trans_trac     = .true.
        cnvcld         = .true.
-       imfshalcnv     = @[IMFSHALCNV]
-       imfdeepcnv     = @[IMFDEEPCNV]
-       cdmbgwd        = @[CDMBWD]
+       imfshalcnv     = 2
+       imfdeepcnv     = 2
+       cdmbgwd        = 1.0,1.0,1.0,1.0
        sfc_z0_type    = 6
        prslrd0        = 0.
        ivegsrc        = 1
        isot           = 1
-       lsm            = @[LSM]
-       iopt_dveg      = @[IOPT_DVEG]
-       iopt_crs       = @[IOPT_CRS]
+       lsm            = 1
+       iopt_dveg      = 2
+       iopt_crs       = 1
        iopt_btr       = 1
        iopt_run       = 1
-       iopt_sfc       = @[IOPT_SFC]
+       iopt_sfc       = 1
        iopt_frz       = 1
        iopt_inf       = 1
-       iopt_rad       = @[IOPT_RAD]
-       iopt_alb       = @[IOPT_ALB]
+       iopt_rad       = 1
+       iopt_alb       = 2
        iopt_snf       = 4
        iopt_tbot      = 2
-       iopt_stc       = @[IOPT_STC] ! 1
+       iopt_stc       = 1
        iopt_trs       = 2
        iopt_diag      = 2
        debug          = .false.
@@ -204,7 +223,6 @@
        cplflx         = @[CPLFLX]
        cplice         = .false.
        cplocn2atm     = @[CPLOCN2ATM]
-       icplocn2atm    = @[ICPLOCN2ATM]
        cplwav         = @[CPLWAV]
        cplwav2atm     = @[CPLWAV2ATM]
        cpl_imp_mrg    = @[CPL_IMP_MRG]
@@ -223,22 +241,32 @@
        lndp_type      = 0
        n_var_lndp     = 0
        gwd_opt        = 2
-       do_ugwp_v0     = @[DO_UGWP_V0]
-       do_ugwp_v1     = @[DO_UGWP_V1]
-       do_ugwp_v1_w_gsldrag = @[DO_UGWP_V1_W_GSLDRAG]
-       do_ugwp_v1_orog_only = @[DO_UGWP_V1_OROG_ONLY]
-       do_gsl_drag_ls_bl    = @[DO_GSL_DRAG_LS_BL]
-       do_gsl_drag_ss       = @[DO_GSL_DRAG_SS]
-       do_gsl_drag_tofd     = @[DO_GSL_DRAG_TOFD]
-       do_ugwp_v0_orog_only = @[DO_UGWP_V0_OROG_ONLY]
-
-       do_mynnedmf    = @[DO_MYNNEDMF]
-       lheatstrg      = @[LHEATSTRG]
-       lseaspray      = @[LSEASPRAY]
-       do_mynnsfclay  = @[DO_MYNNSFCLAY]
-       bl_mynn_tkeadvect = @[BL_MYNN_TKEADVECT]
+       do_ugwp_v0     = .false.
+       do_ugwp_v1     = .false.
+       do_ugwp_v1_w_gsldrag = .false.
+       do_ugwp_v1_orog_only = .false.
+       do_gsl_drag_ls_bl    = .true.
+       do_gsl_drag_ss       = .true.
+       do_gsl_drag_tofd     = .true.
+       do_ugwp_v0_orog_only = .false.
 /
 
+  &gfdl_cloud_microphysics_v3_nml
+       tau_imlt     = 1200.
+       rthresh      = 20.0e-6
+       c_psaci      = 0.05
+       c_pgacs      = 0.01
+       vi_max       = 1.0
+       vs_max       = 2.0
+       vg_max       = 12.0
+       rewmax       = 15.0
+       rermin       = 16.0
+       regmin       = 150.0
+       z_slope_ice  = .true
+       do_sedi_w    = .true.
+       fix_negative = .true.
+       reiflag       = 5
+/
  &gfdl_cloud_microphysics_nml
        sedi_transport = .false.
        do_sedi_heat = .false.
@@ -350,21 +378,10 @@
        knob_ugwp_effac   = 1,1,1,1
        knob_ugwp_doaxyz  = 1
        knob_ugwp_doheat  = 1
-       knob_ugwp_dokdis  = @[KNOB_UGWP_DOKDIS]
-       knob_ugwp_ndx4lh  = @[KNOB_UGWP_NDX4LH]
-       knob_ugwp_version = @[KNOB_UGWP_VERSION]
-       ! This one is only for cires_ugwp_module.F90
-@[HIDE_UGWPV0]      launch_level      = 25
-       ! These are only for cires_ugwpv1_module.F90
-@[HIDE_UGWPV1]      knob_ugwp_lzmax    = 15.750e3
-@[HIDE_UGWPV1]      knob_ugwp_lzmin    = 0.75e3
-@[HIDE_UGWPV1]      knob_ugwp_lzstar   = 2.0e3
-@[HIDE_UGWPV1]      knob_ugwp_taumin   = 0.25e-3
-@[HIDE_UGWPV1]      knob_ugwp_tauamp   = 3.0e-3
-@[HIDE_UGWPV1]      knob_ugwp_lhmet    = 200.0e3
-@[HIDE_UGWPV1]      knob_ugwp_orosolv  = 'pss-1986'
-@[HIDE_UGWPV1]      knob_ugwp_palaunch = @[KNOB_UGWP_PALAUNCH]
-@[HIDE_UGWPV1]      knob_ugwp_nslope   = @[KNOB_UGWP_NSLOPE]
+       knob_ugwp_dokdis  = 1
+       knob_ugwp_ndx4lh  = 1
+       knob_ugwp_version = 0
+       launch_level      = 25
 /
 
  &MOM_input_nml
