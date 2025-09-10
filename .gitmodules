@@ -1,6 +1,6 @@
 [submodule "UFSATM"]
   path = UFSATM
-  url = https://github.com/barlage/ufsatm
+  url = https://github.com/barlage/fv3atm
   branch = glacier_mods
 [submodule "WW3"]
   path = WW3
